@@ -518,9 +518,9 @@ public class Branch extends javax.swing.JInternalFrame {
 
     private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
         if (rBtnCode.isSelected()) {
-            SearchCategoryByCode(txtSearch.getText().toString());
+            SearchCategoryByCode(txtSearch.getText());
         } else if (rBtnName.isSelected()) {
-            SearchCategoryByName(txtSearch.getText().toString());
+            SearchCategoryByName(txtSearch.getText());
         }
     }//GEN-LAST:event_txtSearchKeyReleased
 
