@@ -152,6 +152,7 @@ public class IndexPage extends javax.swing.JFrame {
         LabelBackGroundPicture.setIcon(DefaultBackGround);
         dskPane_RightPanel.setBackground(new Color(255, 255, 255));
 //        LabelClientLogo.setBackground(new Color(0, 0, 0));
+        enableV();
         LabelUser.requestFocus();
 
 //        String branch = ReadConfig.branch.trim();
@@ -1113,6 +1114,16 @@ private void MenuMainCategoryActionPerformed(java.awt.event.ActionEvent evt) {//
     }
 
 }//GEN-LAST:event_MenuMainCategoryActionPerformed
+
+private void enableV(){
+    MenuPurchaseRequiesitionNote.setVisible(false);
+    menuPurchaseRequiesitionApprove.setVisible(false);
+    MenuPurchaseOrders.setVisible(false);
+    menuItemUsageOfDepartment.setVisible(false);
+    jSeparator4.setVisible(false);
+    TabMenuSettings.setVisible(false);
+    MenuCustomer.setVisible(false);
+}
 
 private void TabMenuMainFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TabMenuMainFilesActionPerformed
 
