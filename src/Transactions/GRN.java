@@ -6,7 +6,6 @@ package Transactions;
 
 import MainFiles.IndexPage;
 import static MainFiles.IndexPage.grn;
-;
 import OtherDialogs.WriteNotesCommon;
 import OtherDialogs.AddFreeItems;
 import SearchDialogs.GRNItemSearch;
