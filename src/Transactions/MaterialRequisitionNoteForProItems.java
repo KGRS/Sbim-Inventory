@@ -709,7 +709,7 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
             float OtherChargers = Float.parseFloat(txtOtherChargers.getText());
             float TotalWithTaxes = roundTwoDecimalsFloat(Float.parseFloat(txtTotalWithTax.getText()));
 
-            String Remarks = "";
+            String Remarks = "", MRNStatus = "Yes";
 
             String ID;
             AutoID = new DocNumGenerator();
@@ -732,7 +732,8 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
                     + "           ,[Remarks]\n"
                     + "           ,[DepartmentCode]\n"
                     + "           ,[RequestedBy]\n"
-                    + "           ,[IsPending])\n"
+                    + "           ,[IsPending]\n"
+                    + "           ,[IS_PRODUCTION_ITEM_MRN])\n"
                     + "     VALUES\n"
                     + "           ('" + ID + "'\n"
                     + "           ,'" + Date + "'\n"
@@ -744,7 +745,8 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
                     + "           ,'" + Remarks + "'\n"
                     + "           ,'" + departmentCode[1] + "'\n"
                     + "           ,'" + RequestedBy + "'\n"
-                    + "           ,'" + isPending + "')";
+                    + "           ,'" + isPending + "'\n"
+                    + "           ,'" + MRNStatus + "')";
             stmtMain.execute(MainInsertQuery);
             stmtMain.close();
 
