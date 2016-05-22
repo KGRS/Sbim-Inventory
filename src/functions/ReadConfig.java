@@ -24,17 +24,9 @@ public class ReadConfig {
     public static String UpdateSellPriceAtGRN;
     public static String branch;
     public static String department;
-    
-//    public static String invoice_data_from_tblPosMaster;
-//    public static String should_receipt_form_viewed;
-//    public static String application_location_code;
-//    public static String cheque_printer_name;
-//    public static String should_view_printPreview;
-//    public static String should_print_automatically;   
-//    public static String reconcilation_account_type ;   
-//    public static String reconcilation_sc_code ;    
+ 
     public static String Date;
-//    public static String themeColour;
+    public static String checkAvailableQuantity;
    
     
     static {
@@ -57,18 +49,8 @@ public class ReadConfig {
             BarCodeImageType      = prop.getProperty("BarCodeImageType");
             UpdateSellPriceAtGRN =  prop.getProperty("UpdateSellPriceAtGRN");
             branch =  prop.getProperty("Branch");
-            department =  prop.getProperty("Departments");
+            department =  prop.getProperty("Departments");          
             
-//            invoice_data_from_tblPosMaster      = prop.getProperty("invoice_data_from_tblPosMaster");
-//            should_receipt_form_viewed      = prop.getProperty("should_receipt_form_viewed");
-//            application_location_code      = prop.getProperty("application_location_code");
-//            cheque_printer_name      = prop.getProperty("cheque_printer_name");
-//            should_view_printPreview      = prop.getProperty("should_view_printPreview");
-//            should_print_automatically      = prop.getProperty("should_print_automatically");
-//            reconcilation_account_type      = prop.getProperty("reconcilation_account_type");
-//            reconcilation_sc_code      = prop.getProperty("reconcilation_sc_code");
-            
-
             if(driver.equals("SQL2000")){
                 db_driver   =   "com.microsoft.jdbc.sqlserver.SQLServerDriver";
                 db_url      =   "jdbc:microsoft:sqlserver://"+ip+":1433;DatabaseName="+dbName;
@@ -81,7 +63,7 @@ public class ReadConfig {
             }
             
             Date = prop.getProperty("DateType");
-//            themeColour = prop.getProperty("ThemeColour");
+            checkAvailableQuantity =prop.getProperty("CheckAvailableQuantity");
             
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Can't read cofig files");

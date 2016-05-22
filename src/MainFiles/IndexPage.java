@@ -13,6 +13,7 @@ import Transactions.ItemDisposal;
 import Transactions.ItemTransferBranchWise;
 import Transactions.ItemTransferDepartmentWise;
 import Transactions.MaterialRequisitionNote;
+import Transactions.MaterialRequisitionNoteForProItems;
 import Transactions.PurchaseOrder;
 import Transactions.PurchaseRequisitionNote;
 import Transactions.ReturnToSupplier;
@@ -85,6 +86,7 @@ public class IndexPage extends javax.swing.JFrame {
     public static GRN grn = null;
     public static ReturnToSupplier RetToSup = null;
     public static MaterialRequisitionNote materialRequisitionNote = null;
+    public static MaterialRequisitionNoteForProItems materialRequisitionNoteForProItems = null;
     public static IssueForMaterialRequisitionItemCodeWise issueForMaterialRequisitionItemCodeWise = null;
     public static ItemDisposal ItemD = null;
     public static ItemTransferBranchWise IT = null;
@@ -217,7 +219,9 @@ public class IndexPage extends javax.swing.JFrame {
         MenuReturnToSupplier = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
+        arrowMenuMRN = new javax.swing.JMenu();
         menuMeterialRequisitionNote = new javax.swing.JMenuItem();
+        menuMeterialRequisitionNoteForProItems = new javax.swing.JMenuItem();
         arrowMenuIssue = new javax.swing.JMenu();
         menuIssueForMaterialRequisition = new javax.swing.JMenuItem();
         menuIssueWithOutMaterialRequisition = new javax.swing.JMenuItem();
@@ -602,14 +606,25 @@ public class IndexPage extends javax.swing.JFrame {
         TabMenuTransactions.add(arrowMenuReturnToSupplier);
         TabMenuTransactions.add(jSeparator5);
 
-        menuMeterialRequisitionNote.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
+        arrowMenuMRN.setText("MRN from Departments");
+
         menuMeterialRequisitionNote.setText("Material Requisition Note");
         menuMeterialRequisitionNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuMeterialRequisitionNoteActionPerformed(evt);
             }
         });
-        TabMenuTransactions.add(menuMeterialRequisitionNote);
+        arrowMenuMRN.add(menuMeterialRequisitionNote);
+
+        menuMeterialRequisitionNoteForProItems.setText("Material Requisition Note for Production Items");
+        menuMeterialRequisitionNoteForProItems.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuMeterialRequisitionNoteForProItemsActionPerformed(evt);
+            }
+        });
+        arrowMenuMRN.add(menuMeterialRequisitionNoteForProItems);
+
+        TabMenuTransactions.add(arrowMenuMRN);
 
         arrowMenuIssue.setText("Issue to Departments");
 
@@ -1897,6 +1912,18 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
         }
     }//GEN-LAST:event_menuIssueWithOutMaterialRequisitionActionPerformed
 
+    private void menuMeterialRequisitionNoteForProItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMeterialRequisitionNoteForProItemsActionPerformed
+        if (materialRequisitionNoteForProItems != null) {
+            if (!materialRequisitionNoteForProItems.isVisible()) {
+                materialRequisitionNoteForProItems.setVisible(true);
+            }
+        } else {
+            materialRequisitionNoteForProItems = new MaterialRequisitionNoteForProItems();
+            dskPane_RightPanel.add(materialRequisitionNoteForProItems);
+            materialRequisitionNoteForProItems.setVisible(true);
+        }
+    }//GEN-LAST:event_menuMeterialRequisitionNoteForProItemsActionPerformed
+
     public static JMenu getOpenWindowMenuItem() {
         return TabMenuSettings;
     }
@@ -2014,6 +2041,7 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
     public static javax.swing.JTextField TextCompanyName;
     private javax.swing.JMenu arrowMenuGRN;
     private javax.swing.JMenu arrowMenuIssue;
+    private javax.swing.JMenu arrowMenuMRN;
     private javax.swing.JMenu arrowMenuReturnToSupplier;
     private javax.swing.JMenu arrowMenuTransfer;
     public static javax.swing.JDesktopPane dskPane_RightPanel;
@@ -2049,6 +2077,7 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
     private javax.swing.JMenuItem menuItemRemovePendingTransactions;
     private javax.swing.JMenuItem menuItemUsageOfDepartment;
     private javax.swing.JMenuItem menuMeterialRequisitionNote;
+    private javax.swing.JMenuItem menuMeterialRequisitionNoteForProItems;
     private javax.swing.JMenuItem menuPurchaseRequiesitionApprove;
     private javax.swing.JMenuItem menuTransactionsComparison;
     private javax.swing.JMenuItem menuTransferDepartment;
