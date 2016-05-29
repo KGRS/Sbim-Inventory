@@ -49,7 +49,7 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
     private DocNumGenerator AutoID;
     private final String projectPath = System.getProperty("user.dir");
     private final String menuName = "Material Requisition Note for Production Items";
-    private String CheckAvailableQuantity = ReadConfig.checkAvailableQuantity;
+    private final String CheckAvailableQuantity = ReadConfig.checkAvailableQuantity;
 
     /**
      * Creates new form MaterialRequisitionNoteForProItems

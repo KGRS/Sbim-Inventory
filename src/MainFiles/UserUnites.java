@@ -29,7 +29,7 @@ public class UserUnites extends javax.swing.JInternalFrame {
     private final String menuName = "User units";
 
     /**
-     * Creates new form Department
+     * Creates new form UserUnites
      */
     public UserUnites() {
         initComponents();
