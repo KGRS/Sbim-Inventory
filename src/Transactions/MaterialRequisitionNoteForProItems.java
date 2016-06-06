@@ -61,6 +61,7 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         LoadSystemDate();
         LoadTaxesToLables();
         LoadRequestFromToCombo();
+        LoadJobsToCombo();
         model_MRNItemTable = (DefaultTableModel) tableMRNItem.getModel();
         model_IngredientItemTable = (DefaultTableModel) tableIngredientRawItems.getModel();
         model_productLevel1Items = (DefaultTableModel) tableProductLevel1.getModel();
@@ -100,7 +101,7 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         txtSearch = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         textDate = new javax.swing.JTextField();
-        PanelPurchaseOrder = new javax.swing.JPanel();
+        panelAvailableItems = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableIngredientRawItems = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -131,8 +132,11 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         textNumbersInAvailable = new javax.swing.JTextField();
         cmbTakeFromDepartment = new javax.swing.JComboBox();
         backgroundCornerLabel = new javax.swing.JLabel();
+        lbl_subAccount1 = new javax.swing.JLabel();
+        comboBoxJobsToRequest = new javax.swing.JComboBox();
         backgroundLabel = new javax.swing.JLabel();
         labelIcon = new javax.swing.JLabel();
+        buttonView = new javax.swing.JButton();
 
         setIconifiable(true);
         setPreferredSize(new java.awt.Dimension(1097, 674));
@@ -188,8 +192,8 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         panel1.add(lbl_description, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 100, 20));
 
         lbl_subAccount.setForeground(new java.awt.Color(102, 102, 102));
-        lbl_subAccount.setText(" Search items to request by");
-        panel1.add(lbl_subAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 170, 20));
+        lbl_subAccount.setText(" Search jobs to request");
+        panel1.add(lbl_subAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, 20));
 
         btnExit.setMnemonic('e');
         btnExit.setText("Exit");
@@ -209,7 +213,7 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
                 rBtnCodeActionPerformed(evt);
             }
         });
-        panel1.add(rBtnCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 60, -1));
+        panel1.add(rBtnCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 60, -1));
 
         rBtnName.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(rBtnName);
@@ -225,7 +229,7 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
                 rBtnNameKeyPressed(evt);
             }
         });
-        panel1.add(rBtnName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 60, -1));
+        panel1.add(rBtnName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 60, -1));
 
         ButtonPreview.setText("Preview");
         ButtonPreview.addActionListener(new java.awt.event.ActionListener() {
@@ -243,14 +247,14 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
                 txtSearchKeyReleased(evt);
             }
         });
-        panel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 150, -1));
+        panel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 150, -1));
         panel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 600, 350, -1));
 
         textDate.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         textDate.setEnabled(false);
         panel1.add(textDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 120, -1));
 
-        PanelPurchaseOrder.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true), "Available items"));
+        panelAvailableItems.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true), "Available items"));
 
         tableIngredientRawItems.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -311,29 +315,29 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         });
         jScrollPane1.setViewportView(tableProductLevel1);
 
-        javax.swing.GroupLayout PanelPurchaseOrderLayout = new javax.swing.GroupLayout(PanelPurchaseOrder);
-        PanelPurchaseOrder.setLayout(PanelPurchaseOrderLayout);
-        PanelPurchaseOrderLayout.setHorizontalGroup(
-            PanelPurchaseOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPurchaseOrderLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelAvailableItemsLayout = new javax.swing.GroupLayout(panelAvailableItems);
+        panelAvailableItems.setLayout(panelAvailableItemsLayout);
+        panelAvailableItemsLayout.setHorizontalGroup(
+            panelAvailableItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAvailableItemsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        PanelPurchaseOrderLayout.setVerticalGroup(
-            PanelPurchaseOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPurchaseOrderLayout.createSequentialGroup()
-                .addGroup(PanelPurchaseOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelAvailableItemsLayout.setVerticalGroup(
+            panelAvailableItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAvailableItemsLayout.createSequentialGroup()
+                .addGroup(panelAvailableItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(PanelPurchaseOrderLayout.createSequentialGroup()
+                    .addGroup(panelAvailableItemsLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        panel1.add(PanelPurchaseOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 1050, 160));
+        panel1.add(panelAvailableItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 1050, 160));
 
         PanelGRN.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true), "Material requisition note items"));
 
@@ -473,7 +477,7 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
 
         lbl_category8.setForeground(new java.awt.Color(102, 102, 102));
         lbl_category8.setText(" Requset from (Department)");
-        panel1.add(lbl_category8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 20));
+        panel1.add(lbl_category8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 170, 20));
 
         ButtonAddSelected.setText("Add selected");
         ButtonAddSelected.addActionListener(new java.awt.event.ActionListener() {
@@ -554,10 +558,26 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
                 cmbTakeFromDepartmentKeyPressed(evt);
             }
         });
-        panel1.add(cmbTakeFromDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 310, -1));
+        panel1.add(cmbTakeFromDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 280, -1));
 
         backgroundCornerLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 470, 230));
+        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 460, 170));
+
+        lbl_subAccount1.setForeground(new java.awt.Color(102, 102, 102));
+        lbl_subAccount1.setText(" Search items to request");
+        panel1.add(lbl_subAccount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 170, 20));
+
+        comboBoxJobsToRequest.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--" }));
+        comboBoxJobsToRequest.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                comboBoxJobsToRequestPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
+        panel1.add(comboBoxJobsToRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 280, -1));
 
         backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         panel1.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 184, 1080, 460));
@@ -565,11 +585,19 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         labelIcon.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         panel1.add(labelIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 240, 130));
 
+        buttonView.setText("View");
+        buttonView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonViewActionPerformed(evt);
+            }
+        });
+        panel1.add(buttonView, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 100, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1081, Short.MAX_VALUE)
+            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,6 +607,29 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void LoadJobsToCombo() {
+        try {
+            java.sql.Statement stmt = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String query = "select JOB_ID, JOB_ALLOCATED_DATE, PRODUCT_LEVEL_ITEM_CODE, JOB_ALLOCATED_TIME From JobRunning where (MRNID = 'No' AND PRODUCT_LEVEL = '1') order by JOB_ID DESC";
+            ResultSet rset = stmt.executeQuery(query);
+
+            comboBoxJobsToRequest.removeAllItems();
+            comboBoxJobsToRequest.insertItemAt("--Select--", 0);
+            int position = 1;
+            if (rset.next()) {
+                do {
+                    comboBoxJobsToRequest.insertItemAt(rset.getString("JOB_ID") + "--" + rset.getString("JOB_ALLOCATED_DATE")  + "--" + rset.getString("JOB_ALLOCATED_TIME") + "--" + rset.getString("PRODUCT_LEVEL_ITEM_CODE"), position); // 
+                    position++;
+                } while (rset.next());
+            }
+            comboBoxJobsToRequest.setSelectedIndex(0);
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please contact for support.");
+        }
+    }
+    
     private void LoadRequestFromToCombo() {
         try {
             java.sql.Statement stmt = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -840,29 +891,15 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
             TextAmount.setText("0.00");
             txtMRNID.setText("");
             btnCalculate.setEnabled(true);
-
-            try {
-                int rowi = model_MRNItemTable.getRowCount();
-                for (int i = 0; i < rowi; i++) {
-                    model_MRNItemTable.removeRow(0);
-                }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                JOptionPane.showMessageDialog(this, "Please contact for support.");
-            }
-
-            try {
-                int rowj = model_IngredientItemTable.getRowCount();
-                for (int j = 0; j < rowj; j++) {
-                    model_IngredientItemTable.removeRow(0);
-                }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                JOptionPane.showMessageDialog(this, "Please contact for support.");
-            }
+            
+            model_MRNItemTable.setRowCount(0);
+            model_IngredientItemTable.setRowCount(0);
+            model_productLevel1Items.setRowCount(0);
+            
             cmbTakeFromDepartment.requestFocus();
             textNumbersInAvailable.setText("0");
             textNumbersInTransaction.setText("0");
+            comboBoxJobsToRequest.setSelectedIndex(0);
         }
     }
 
@@ -1171,9 +1208,9 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
             RefreshProductLevel1ItemTable();
 
             if (!ItemName.equals("")) {
-                query = "SELECT * FROM Items WHERE Visibility = 'Yes' AND ItemName LIKE '%" + ItemName + "%'";
+                query = "SELECT PL1_ITEM_CODE, PL1_ITEM_NAME, UnitCode FROM ProductLevel1 WHERE PL1_ITEM_CODE LIKE '%" + ItemName + "%' AND ProductLevel1.\"VISIBILITY\" = 'Yes'";
             } else {
-                query = "SELECT * FROM Items  WHERE Visibility = 'Yes' AND ItemName LIKE '%" + ItemName + "%'";
+                query = "SELECT PL1_ITEM_CODE, PL1_ITEM_NAME, UnitCode FROM ProductLevel1 WHERE PL1_ITEM_CODE LIKE '%" + ItemName + "%' AND ProductLevel1.\"VISIBILITY\" = 'Yes'";
             }
             stmt = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             reset = stmt.executeQuery(query);
@@ -1658,6 +1695,57 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
         }
     }//GEN-LAST:event_tableProductLevel1MouseClicked
 
+    private void comboBoxJobsToRequestPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_comboBoxJobsToRequestPopupMenuWillBecomeInvisible
+        
+    }//GEN-LAST:event_comboBoxJobsToRequestPopupMenuWillBecomeInvisible
+
+    private void buttonViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonViewActionPerformed
+        int selectedIndexOfCombo = comboBoxJobsToRequest.getSelectedIndex();
+        if(selectedIndexOfCombo == 0){
+            
+        }else if(selectedIndexOfCombo != 0){
+            RefreshForJobSearch();
+        }
+    }//GEN-LAST:event_buttonViewActionPerformed
+
+    private void RefreshForJobSearch(){
+        int x = JOptionPane.showConfirmDialog(this, "Chaning the job will refresh the whole window. Are you sure to change?", "Change", JOptionPane.YES_NO_OPTION);
+        if (x == JOptionPane.YES_OPTION) {
+            rBtnCode.setSelected(true);
+            LoadSystemDate();
+            LoadTaxesToLables();
+            LoadRequestFromToCombo();
+
+            buttonSave.setEnabled(false);
+            textRequestedBy.setText("");
+
+            txtTotalNoTax.setText("0.00");
+            txtOtherChargers.setText("0.00");
+            txtTotalWithTax.setText("0.00");
+
+            txtSearch.setText("");
+
+            TextPurchasePrice.setText("0.00");
+            TextQuantity.setText("0.000");
+            TextAmount.setText("0.00");
+            txtMRNID.setText("");
+            btnCalculate.setEnabled(true);
+            
+            model_MRNItemTable.setRowCount(0);
+            model_IngredientItemTable.setRowCount(0);
+            model_productLevel1Items.setRowCount(0);
+            
+            cmbTakeFromDepartment.requestFocus();
+            textNumbersInAvailable.setText("0");
+            textNumbersInTransaction.setText("0");
+            
+            rBtnCode.setEnabled(false);
+            rBtnCode.setEnabled(false);
+            cmbTakeFromDepartment.setEnabled(false);
+            txtSearch.setEnabled(false);
+        }
+    }
+    
     private void loadIngredientItem() {
         String Code, Name, UnitCode;
 
@@ -1728,7 +1816,6 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
     private javax.swing.JButton ButtonAddSelected;
     private javax.swing.JButton ButtonPreview;
     private javax.swing.JPanel PanelGRN;
-    private javax.swing.JPanel PanelPurchaseOrder;
     private javax.swing.JFormattedTextField TextAmount;
     private javax.swing.JFormattedTextField TextPurchasePrice;
     private javax.swing.JFormattedTextField TextQuantity;
@@ -1740,8 +1827,10 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
     private javax.swing.JButton buttonRefresh;
     public static javax.swing.JButton buttonSave;
     private javax.swing.JButton buttonUpdate;
+    private javax.swing.JButton buttonView;
     private javax.swing.JButton buttonWriteNotes;
     private javax.swing.JComboBox cmbTakeFromDepartment;
+    private javax.swing.JComboBox comboBoxJobsToRequest;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1756,7 +1845,9 @@ public class MaterialRequisitionNoteForProItems extends javax.swing.JInternalFra
     private javax.swing.JLabel lbl_category8;
     private javax.swing.JLabel lbl_description;
     private javax.swing.JLabel lbl_subAccount;
+    private javax.swing.JLabel lbl_subAccount1;
     public static javax.swing.JPanel panel1;
+    private javax.swing.JPanel panelAvailableItems;
     private javax.swing.JRadioButton rBtnCode;
     private javax.swing.JRadioButton rBtnName;
     private javax.swing.JTable tableIngredientRawItems;
