@@ -75,8 +75,6 @@ public class IndexPage extends javax.swing.JFrame {
     public static Item item = null;
     public static Supplier sup = null;
     public static Customer cus = null;
-    public static Branch bran = null;
-    public static Department Dept = null;
     public static UserUnites userUnites = null;
 
     public static PurchaseRequisitionNote purchaseRequisitionNote = null;
@@ -200,9 +198,6 @@ public class IndexPage extends javax.swing.JFrame {
         MenuCustomer = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
         MenuUserUnit = new javax.swing.JMenuItem();
-        jSeparator8 = new javax.swing.JPopupMenu.Separator();
-        MenuBranch = new javax.swing.JMenuItem();
-        MenuDepartment = new javax.swing.JMenuItem();
         TabMenuTransactions = new javax.swing.JMenu();
         MenuPurchaseRequiesitionNote = new javax.swing.JMenuItem();
         menuPurchaseRequiesitionApprove = new javax.swing.JMenuItem();
@@ -513,25 +508,6 @@ public class IndexPage extends javax.swing.JFrame {
             }
         });
         TabMenuMainFiles.add(MenuUserUnit);
-        TabMenuMainFiles.add(jSeparator8);
-
-        MenuBranch.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        MenuBranch.setText("Branch");
-        MenuBranch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuBranchActionPerformed(evt);
-            }
-        });
-        TabMenuMainFiles.add(MenuBranch);
-
-        MenuDepartment.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        MenuDepartment.setText("Department");
-        MenuDepartment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuDepartmentActionPerformed(evt);
-            }
-        });
-        TabMenuMainFiles.add(MenuDepartment);
 
         mnBar_menuBar.add(TabMenuMainFiles);
 
@@ -1647,30 +1623,6 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
 
     }//GEN-LAST:event_ButtonClickHereActionPerformed
 
-    private void MenuDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuDepartmentActionPerformed
-        if (Dept != null) {
-            if (!Dept.isVisible()) {
-                Dept.setVisible(true);
-            }
-        } else {
-            Dept = new Department();
-            dskPane_RightPanel.add(Dept);
-            Dept.setVisible(true);
-        }
-    }//GEN-LAST:event_MenuDepartmentActionPerformed
-
-    private void MenuBranchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBranchActionPerformed
-        if (bran != null) {
-            if (!bran.isVisible()) {
-                bran.setVisible(true);
-            }
-        } else {
-            bran = new Branch();
-            dskPane_RightPanel.add(bran);
-            bran.setVisible(true);
-        }
-    }//GEN-LAST:event_MenuBranchActionPerformed
-
     private void MenuItemDefaultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemDefaultActionPerformed
         try {
 
@@ -1930,11 +1882,9 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
     private javax.swing.JMenuItem MenuAbout;
     private javax.swing.JMenuItem MenuAdminSettings;
     private javax.swing.JMenuItem MenuBaseCategory;
-    private javax.swing.JMenuItem MenuBranch;
     private javax.swing.JMenuItem MenuConnectionSettings;
     public static javax.swing.JMenuItem MenuCustomer;
     public static javax.swing.JMenuItem MenuDataReports;
-    private javax.swing.JMenuItem MenuDepartment;
     private javax.swing.JMenuItem MenuDisposal;
     public static javax.swing.JMenuItem MenuGRNItemCodeWise;
     private javax.swing.JMenuItem MenuGRNSerialCodeWise;
@@ -2016,7 +1966,6 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
-    private javax.swing.JPopupMenu.Separator jSeparator8;
     private javax.swing.JPopupMenu.Separator jSeparator9;
     public static javax.swing.JLabel labelDepartmentCode;
     public static javax.swing.JLabel labelSubDepartmentCode;
