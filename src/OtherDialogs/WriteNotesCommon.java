@@ -14,7 +14,6 @@ import Transactions.GRN;
 import Transactions.IssueForMaterialRequisitionItemCodeWise;
 import Transactions.ItemDisposal;
 import Transactions.ItemTransferBranchWise;
-import Transactions.MaterialRequisitionNote;
 import Transactions.PurchaseOrder;
 import Transactions.PurchaseRequisitionNote;
 import Transactions.ReturnToSupplier;
@@ -42,7 +41,6 @@ public class WriteNotesCommon extends javax.swing.JDialog {
     private PurchaseOrder purchaseOrderObject = null;
     private GRN grnObject = null;
     private ItemDisposal itemDisposal = null;
-    private MaterialRequisitionNote materialRequisitionNote = null;
     private IssueForMaterialRequisitionItemCodeWise issueForMaterialRequisitionItemCodeWise = null;
     private ItemTransferBranchWise itemTransferBranchWise = null;
     private ReturnToSupplier returnToSupplier = null;
@@ -82,11 +80,6 @@ public class WriteNotesCommon extends javax.swing.JDialog {
             String disposalID = ItemDisposal.txtDisposalID.getText();
             textTransactionID.setText(disposalID);
             LoadDetailsForItemDisposal();
-        } else if (objectCommonWriteNotes instanceof MaterialRequisitionNote) {
-            this.materialRequisitionNote = (MaterialRequisitionNote) objectCommonWriteNotes;
-            String MRNID = MaterialRequisitionNote.txtMRNID.getText();
-            textTransactionID.setText(MRNID);
-            LoadDetailsForMaterialRequisitionNote();
         } else if (objectCommonWriteNotes instanceof IssueForMaterialRequisitionItemCodeWise) {
             this.issueForMaterialRequisitionItemCodeWise = (IssueForMaterialRequisitionItemCodeWise) objectCommonWriteNotes;
             String issueID = IssueForMaterialRequisitionItemCodeWise.txtIssueID.getText();
@@ -364,32 +357,6 @@ public class WriteNotesCommon extends javax.swing.JDialog {
         }
     }
 
-    private void LoadDetailsForMaterialRequisitionNote() {
-        try {
-            String transactionID = MaterialRequisitionNote.txtMRNID.getText();
-            ResultSet reset;
-            Statement stmt;
-            String query, empty = " ";
-            int rowCount = 0;
-            query = "SELECT ItemCode,ItemName,Quantity,Notes FROM MRNItems WHERE MRNID = '" + transactionID + "' ORDER BY ItemName";
-            stmt = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            reset = stmt.executeQuery(query);
-
-            while (reset.next()) {
-                model_ItemTable.addRow(new Object[model_ItemTable.getColumnCount()]);
-                TableItem.setValueAt(reset.getString("ItemCode"), rowCount, 0);
-                TableItem.setValueAt(reset.getString("ItemName"), rowCount, 1);
-                TableItem.setValueAt(reset.getString("Quantity"), rowCount, 2);
-                TableItem.setValueAt(empty, rowCount, 3);
-                rowCount++;
-            }
-            reset.close();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            JOptionPane.showMessageDialog(this, "Please contact for support.");
-        }
-    }
-
     private void LoadDetailsForIssueForMaterialRequisitionItemCodeWise() {
         try {
             String transactionID = IssueForMaterialRequisitionItemCodeWise.txtIssueID.getText();
@@ -618,32 +585,6 @@ public class WriteNotesCommon extends javax.swing.JDialog {
                     notes = TableItem.getValueAt(i, 3).toString();
 
                     String ItemInsertQuery = "UPDATE ItemDisposalItems SET Notes = '" + notes + "' WHERE DisposalID = '" + transactionID + "' AND ItemCode = '" + ItemCode + "'";
-                    stmtItems.execute(ItemInsertQuery);
-                }
-                stmtItems.close();
-                JOptionPane.showMessageDialog(this, "Your notes are successfully saved.");
-                this.dispose();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                JOptionPane.showMessageDialog(this, "Please contact for support.");
-            } catch (HeadlessException ex) {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                JOptionPane.showMessageDialog(this, "Please contact for support.");
-            }
-        } else if (this.materialRequisitionNote instanceof MaterialRequisitionNote) {
-            try {
-                java.sql.Statement stmtMain = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-                java.sql.Statement stmtItems = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-                String mainInsertQuery = "UPDATE MRNmain SET Remarks = '" + summeryNote + "' WHERE MRNID = '" + transactionID + "'";
-                stmtMain.execute(mainInsertQuery);
-                stmtMain.close();
-
-                for (int i = 0; i < rowCount; i++) {
-                    ItemCode = TableItem.getValueAt(i, 0).toString();
-                    notes = TableItem.getValueAt(i, 3).toString();
-
-                    String ItemInsertQuery = "UPDATE MRNItems SET Notes = '" + notes + "' WHERE MRNID = '" + transactionID + "' AND ItemCode = '" + ItemCode + "'";
                     stmtItems.execute(ItemInsertQuery);
                 }
                 stmtItems.close();
