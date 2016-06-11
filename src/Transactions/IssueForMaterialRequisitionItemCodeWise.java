@@ -724,7 +724,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         String ItemCode, ItemName, PurchaseUnitCode, ExpireDate, MRNID = "", UnitSell;
         double PurchasePrice, Quantity, Amount;
         double CurrentQuantity, NewQuantity, calculatedPoRecivedQuantity, recivedPoQuantity;
-        double PresentageShowSellPrice, SellPrice = 0, AddedValueForCalSellPrice, OriginalSellPrice;
+        double PresentageShowSellPrice, SellPrice, AddedValueForCalSellPrice, OriginalSellPrice;
         int PriceLevel = 0;
         ResultSet RSETCurrentItemQuantity, RSETPoRecivedItemQuantity;
         try {

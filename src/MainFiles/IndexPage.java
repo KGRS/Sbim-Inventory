@@ -11,7 +11,6 @@ import Transactions.IssueForMaterialRequisitionItemCodeWise;
 import Transactions.IssueWithoutMaterialRequisitionItemCodeWise;
 import Transactions.ItemDisposal;
 import Transactions.ItemTransferBranchWise;
-import Transactions.ItemTransferDepartmentWise;
 import Transactions.PurchaseOrder;
 import Transactions.PurchaseRequisitionNote;
 import Transactions.ReturnToSupplier;
@@ -87,7 +86,6 @@ public class IndexPage extends javax.swing.JFrame {
     public static IssueForMaterialRequisitionItemCodeWise issueForMaterialRequisitionItemCodeWise = null;
     public static ItemDisposal ItemD = null;
     public static ItemTransferBranchWise IT = null;
-    public static ItemTransferDepartmentWise ITDW = null;
     public static StockEdit stockedit = null;
     public static IssueWithoutMaterialRequisitionItemCodeWise issueWithoutMaterialRequisitionItemCodeWise = null;
 
@@ -225,7 +223,6 @@ public class IndexPage extends javax.swing.JFrame {
         MenuDisposal = new javax.swing.JMenuItem();
         arrowMenuTransfer = new javax.swing.JMenu();
         MenuTransferBranch = new javax.swing.JMenuItem();
-        menuTransferDepartment = new javax.swing.JMenuItem();
         menuItemUsageOfDepartment = new javax.swing.JMenuItem();
         jSeparator12 = new javax.swing.JPopupMenu.Separator();
         jMenu4 = new javax.swing.JMenu();
@@ -626,14 +623,6 @@ public class IndexPage extends javax.swing.JFrame {
             }
         });
         arrowMenuTransfer.add(MenuTransferBranch);
-
-        menuTransferDepartment.setText("Item Transfer (Department wise)");
-        menuTransferDepartment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuTransferDepartmentActionPerformed(evt);
-            }
-        });
-        arrowMenuTransfer.add(menuTransferDepartment);
 
         TabMenuTransactions.add(arrowMenuTransfer);
 
@@ -1806,18 +1795,6 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
         }
     }//GEN-LAST:event_MenuItemBlankActionPerformed
 
-    private void menuTransferDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuTransferDepartmentActionPerformed
-        if (ITDW != null) {
-            if (!ITDW.isVisible()) {
-                ITDW.setVisible(true);
-            }
-        } else {
-            ITDW = new ItemTransferDepartmentWise();
-            dskPane_RightPanel.add(ITDW);
-            ITDW.setVisible(true);
-        }
-    }//GEN-LAST:event_menuTransferDepartmentActionPerformed
-
     private void menuIssueWithOutMaterialRequisitionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuIssueWithOutMaterialRequisitionActionPerformed
         if (issueWithoutMaterialRequisitionItemCodeWise != null) {
             if (!issueWithoutMaterialRequisitionItemCodeWise.isVisible()) {
@@ -1980,7 +1957,6 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
     private javax.swing.JMenuItem menuItemUsageOfDepartment;
     private javax.swing.JMenuItem menuPurchaseRequiesitionApprove;
     private javax.swing.JMenuItem menuTransactionsComparison;
-    private javax.swing.JMenuItem menuTransferDepartment;
     private javax.swing.JMenuBar mnBar_menuBar;
     private javax.swing.JPanel pnl_BasePanel;
     private javax.swing.JPanel pnl_LeftPanel;

@@ -767,7 +767,7 @@ public class ItemTransferBranchWise extends javax.swing.JInternalFrame {
 
             String TransferID;
             AutoID = new DocNumGenerator();
-            AutoID.methodNumGen("TRANSFER");
+            AutoID.methodNumGen("TRANSFER-B");
             TransferID = AutoID.getDocChar() + AutoID.getDocNumber();
             txtTransferID.setText(TransferID);
             TransferID = txtTransferID.getText();
