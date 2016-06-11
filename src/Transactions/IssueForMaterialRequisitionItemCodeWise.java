@@ -55,13 +55,10 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
     private final String projectPath = System.getProperty("user.dir");
     private final String internalFrameName = "Issue for Material Requisition (Item code wise)";
 
-    /**
-     * Creates new form GRN
-     */
     public IssueForMaterialRequisitionItemCodeWise() {
         initComponents();
         buttonSave.setEnabled(false);
-
+        this.setTitle(internalFrameName);
         model_IssueTable = (DefaultTableModel) tableIssue.getModel();
         model_ChooseFromTable = (DefaultTableModel) tableMRN.getModel();
         model_SearchTable = (DefaultTableModel) tableSearch.getModel();
@@ -131,7 +128,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         lbl_category6 = new javax.swing.JLabel();
         txtTotalNoTax = new javax.swing.JFormattedTextField();
         TextPurchasePrice = new javax.swing.JFormattedTextField();
-        TextQuantity = new javax.swing.JFormattedTextField();
+        textEnteredQuantity = new javax.swing.JFormattedTextField();
         TextAmount = new javax.swing.JFormattedTextField();
         lbl_description2 = new javax.swing.JLabel();
         textAvailableQuantity = new javax.swing.JFormattedTextField();
@@ -139,8 +136,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         backgroundLabel = new javax.swing.JLabel();
 
         setIconifiable(true);
-        setTitle("Issue for Material Requisition (Item code wise)");
-        setPreferredSize(new java.awt.Dimension(1097, 688));
+        setPreferredSize(new java.awt.Dimension(1097, 674));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -551,20 +547,20 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         });
         panel1.add(TextPurchasePrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 110, -1));
 
-        TextQuantity.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.000"))));
-        TextQuantity.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        TextQuantity.setText("0.000");
-        TextQuantity.addFocusListener(new java.awt.event.FocusAdapter() {
+        textEnteredQuantity.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.000"))));
+        textEnteredQuantity.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        textEnteredQuantity.setText("0.000");
+        textEnteredQuantity.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                TextQuantityFocusGained(evt);
+                textEnteredQuantityFocusGained(evt);
             }
         });
-        TextQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+        textEnteredQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                TextQuantityKeyPressed(evt);
+                textEnteredQuantityKeyPressed(evt);
             }
         });
-        panel1.add(TextQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 110, -1));
+        panel1.add(textEnteredQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 110, -1));
 
         TextAmount.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
         TextAmount.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -589,7 +585,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         panel1.add(textAvailableQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(929, 230, 120, -1));
 
         backgroundCornerLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 470, 170));
+        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 460, 110));
 
         backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         panel1.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, 1070, 460));
@@ -602,7 +598,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -674,13 +670,13 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
             JOptionPane.showMessageDialog(this, "Department is not selected.", "No department", JOptionPane.OK_OPTION);
             comboBoxFilter.requestFocus();
         } else if (TextDate.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Something wrong. Date is not loaded. '"+internalFrameName+"' will close now. Please restart the application.", "System error", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(this, "Something wrong. Date is not loaded. '" + internalFrameName + "' will close now. Please restart the application.", "System error", JOptionPane.OK_OPTION);
             this.dispose();
         } else if (SupplierInvoice.equals("")) {
             JOptionPane.showMessageDialog(this, "Issue by is not inserted.", "Empty name", JOptionPane.OK_OPTION);
             textIssueBy.requestFocus();
         } else if (GRnRowCount <= 0) {
-            JOptionPane.showMessageDialog(this, "Items are not inserted to '"+internalFrameName+"'.", "No items", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(this, "Items are not inserted to '" + internalFrameName + "'.", "No items", JOptionPane.OK_OPTION);
         } else if (txtOtherChargers.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Other chargers field is empty.", "Empty fields", JOptionPane.OK_OPTION);
             txtOtherChargers.requestFocus();
@@ -691,7 +687,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                 JOptionPane.showMessageDialog(this, "Other Chargers is less than zero.", "Minus values", JOptionPane.OK_OPTION);
                 txtOtherChargers.requestFocus();
             } else {
-                int x = JOptionPane.showConfirmDialog(this, "Are you sure to save this '"+internalFrameName+"'?", "Save '"+internalFrameName+"'?", JOptionPane.YES_NO_OPTION);
+                int x = JOptionPane.showConfirmDialog(this, "Are you sure to save this '" + internalFrameName + "'?", "Save '" + internalFrameName + "'?", JOptionPane.YES_NO_OPTION);
                 if (x == JOptionPane.YES_OPTION) {
                     LoadTime();
                 }
@@ -915,7 +911,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                 updateMRNItemIsPending();
             }
 
-            JOptionPane.showMessageDialog(this, "'"+internalFrameName+"' is successfully saved.");
+            JOptionPane.showMessageDialog(this, "'" + internalFrameName + "' is successfully saved.");
             buttonSave.setEnabled(false);
             btnCalculate.setEnabled(false);
 
@@ -957,7 +953,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
     }//GEN-LAST:event_buttonRefreshActionPerformed
 
     private void Refresh() {
-        int x = JOptionPane.showConfirmDialog(this, "Refresh '"+internalFrameName+"' window?", "Refresh", JOptionPane.YES_NO_OPTION);
+        int x = JOptionPane.showConfirmDialog(this, "Refresh '" + internalFrameName + "' window?", "Refresh", JOptionPane.YES_NO_OPTION);
         if (x == JOptionPane.YES_OPTION) {
             LoadSystemDate();
             loadDepartmentsToCombo();
@@ -979,7 +975,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
             buttonAddToTable.setEnabled(true);
 
             TextPurchasePrice.setText("0.00");
-            TextQuantity.setText("0.000");
+            textEnteredQuantity.setText("0.000");
             TextAmount.setText("0.00");
             CalendarButtonExpDate.setText("");
             txtIssueID.setText("");
@@ -1034,7 +1030,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         int rowCount = tableIssue.getRowCount();
         String ID = txtIssueID.getText();
         if (rowCount > 0 && ID.isEmpty()) {
-            int x = JOptionPane.showConfirmDialog(this, "Are you sure to exit without saving this '"+internalFrameName+"'?", "Exit '"+internalFrameName+"'?", JOptionPane.YES_NO_OPTION);
+            int x = JOptionPane.showConfirmDialog(this, "Are you sure to exit without saving this '" + internalFrameName + "'?", "Exit '" + internalFrameName + "'?", JOptionPane.YES_NO_OPTION);
             if (x == JOptionPane.YES_OPTION) {
                 if (issueForMaterialRequisitionItemCodeWise != null) {
                     issueForMaterialRequisitionItemCodeWise = null;
@@ -1174,10 +1170,10 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                 Quantity = tableIssue.getValueAt(tableIssue.getSelectedRow(), 4).toString();
                 Amount = tableIssue.getValueAt(tableIssue.getSelectedRow(), 5).toString();
                 TextPurchasePrice.setText(PurchasePrice);
-                TextQuantity.setText(Quantity);
+                textEnteredQuantity.setText(Quantity);
                 TextAmount.setText(Amount);
-                TextQuantity.requestFocus();
-                TextQuantity.selectAll();
+                textEnteredQuantity.requestFocus();
+                textEnteredQuantity.selectAll();
             }
         } else if (evt.getClickCount() == 2) {
             int x = JOptionPane.showConfirmDialog(this, "Are you sure To remove this?", "Remove item?", JOptionPane.YES_NO_OPTION);
@@ -1185,7 +1181,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                 int i = tableIssue.getSelectedRow();
                 model_IssueTable.removeRow(i);
                 TextPurchasePrice.setText("0.00");
-                TextQuantity.setText("0.000");
+                textEnteredQuantity.setText("0.000");
                 TextAmount.setText("0.00");
                 CalendarButtonExpDate.setText("");
                 CalculateAmountWithOutTax();
@@ -1211,8 +1207,8 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         buttonSave.setEnabled(false);
         int SelectedRowCount = tableIssue.getSelectedRowCount();
         if (SelectedRowCount == 1) {
-            if (!TextPurchasePrice.getText().equals("") && !TextQuantity.getText().equals("") && !TextAmount.getText().equals("")) {
-                float CheckQuantity = Float.parseFloat(TextQuantity.getText());
+            if (!TextPurchasePrice.getText().equals("") && !textEnteredQuantity.getText().equals("") && !TextAmount.getText().equals("")) {
+                float CheckQuantity = Float.parseFloat(textEnteredQuantity.getText());
                 float CheckPurchasePrice = Float.parseFloat(TextPurchasePrice.getText());
                 if (CheckQuantity <= 0 || CheckPurchasePrice <= 0) {
                     JOptionPane.showMessageDialog(this, "Quantity and purchase price should be more than zero.", "Zero fields", JOptionPane.OK_OPTION);
@@ -1228,12 +1224,12 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
     }//GEN-LAST:event_buttonUpdateActionPerformed
 
     private void CheckAtUpdateButtonBeforeUpdate() {
-        if (!TextPurchasePrice.getText().equals("") && !TextQuantity.getText().equals("") && !TextAmount.getText().equals("")) {
+        if (!TextPurchasePrice.getText().equals("") && !textEnteredQuantity.getText().equals("") && !TextAmount.getText().equals("")) {
             try {
                 float Amount, AvailableQuantity;
                 int SelectedRow = tableIssue.getSelectedRow();
                 float PurchasePrice = Float.parseFloat(TextPurchasePrice.getText());
-                float Quantity = Float.parseFloat(TextQuantity.getText());
+                float Quantity = Float.parseFloat(textEnteredQuantity.getText());
                 if (0 < Quantity) {
                     String ItemCode = tableIssue.getValueAt(SelectedRow, 0).toString();
                     ResultSet RSETAvaItems;
@@ -1249,7 +1245,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                             buttonUpdate.requestFocus();
                         } else if (AvailableQuantity < Quantity) {
                             JOptionPane.showMessageDialog(this, "Issue quantity should be less than the available quantity.", "Not enough.", JOptionPane.OK_OPTION);
-                            TextQuantity.requestFocus();
+                            textEnteredQuantity.requestFocus();
                         }
                     }
                     stmtItems.close();
@@ -1263,7 +1259,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
             } catch (SQLException ex) {
                 Logger.getLogger(IssueForMaterialRequisitionItemCodeWise.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } else if (TextPurchasePrice.getText().equals("") || TextQuantity.getText().equals("") || TextAmount.getText().equals("")) {
+        } else if (TextPurchasePrice.getText().equals("") || textEnteredQuantity.getText().equals("") || TextAmount.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Some fields are empty.", "Empty fields", JOptionPane.OK_OPTION);
         }
     }
@@ -1271,7 +1267,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
     private void UpdateToReturnTable() {
         int SelectedRow = tableIssue.getSelectedRow();
         double PurchasePrice = Double.parseDouble(TextPurchasePrice.getText());
-        double Quantity = Double.parseDouble(TextQuantity.getText());
+        double Quantity = Double.parseDouble(textEnteredQuantity.getText());
         double Amount = roundTwoDecimals(PurchasePrice * Quantity);
         String ExpireDate = CalendarButtonExpDate.getText();
         if (ExpireDate.isEmpty()) {
@@ -1304,7 +1300,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                 int i = tableIssue.getSelectedRow();
                 model_IssueTable.removeRow(i);
                 TextPurchasePrice.setText("0.00");
-                TextQuantity.setText("0.000");
+                textEnteredQuantity.setText("0.000");
                 TextAmount.setText("0.00");
                 CalendarButtonExpDate.setText("");
                 CalculateAmountWithOutTax();
@@ -1349,7 +1345,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
 
     private void AddSingleItemToTransactionTable() {
         String ItemCode, ItemName, PurchaseUnitCode, expireDate;
-        double PurchasePrice, Quantity, Amount, availableQuantity;
+        double PurchasePrice, Quantity, Amount, availableQuantity, enteredQuantity;
         int getSelectedRowAtPO = tableMRN.getSelectedRow();
         try {
             availableQuantity = Double.parseDouble(textAvailableQuantity.getText());
@@ -1357,17 +1353,17 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
             ItemName = tableMRN.getValueAt(getSelectedRowAtPO, 1).toString();
             PurchaseUnitCode = tableMRN.getValueAt(getSelectedRowAtPO, 2).toString();
             PurchasePrice = roundTwoDecimals(Double.parseDouble(tableMRN.getValueAt(getSelectedRowAtPO, 3).toString()));
-            Quantity = roundThreeDecimals(Double.parseDouble(tableMRN.getValueAt(getSelectedRowAtPO, 4).toString()));
-            Amount = Quantity * PurchasePrice;
+            enteredQuantity = roundThreeDecimals(Double.parseDouble(textEnteredQuantity.getText()));
+            Amount = enteredQuantity * PurchasePrice;
             expireDate = "Not define";
 
-            if (availableQuantity >= Quantity) {
-                model_IssueTable.addRow(new Object[]{ItemCode, ItemName, PurchaseUnitCode, PurchasePrice, Quantity, Amount, expireDate});
+            if (availableQuantity >= enteredQuantity && enteredQuantity > 0) {
+                model_IssueTable.addRow(new Object[]{ItemCode, ItemName, PurchaseUnitCode, PurchasePrice, enteredQuantity, Amount, expireDate});
                 int getRowCountAtGRN = tableIssue.getRowCount();
                 textNumbersInIssue.setText(String.valueOf(getRowCountAtGRN));
                 CalculateAmountWithOutTax();
-            } else if (availableQuantity < Quantity) {
-                JOptionPane.showMessageDialog(this, "Issue quantity should be less than the available quantity.", "Not enough.", JOptionPane.OK_OPTION);
+            } else if (availableQuantity < enteredQuantity || enteredQuantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Issue quantity should be less than or equal to available quantity.", "Not enough.", JOptionPane.OK_OPTION);
             }
 
         } catch (NumberFormatException ex) {
@@ -1437,7 +1433,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
             if (GRnRowCount <= 0) {
                 JOptionPane.showMessageDialog(this, "items are not added to preview.", "Not added", JOptionPane.OK_OPTION);
             } else if (GRnRowCount > 0) {
-                int x = JOptionPane.showConfirmDialog(this, "'"+internalFrameName+"' is still not saved.\nDo you want to view a test preview?", "View a test preview?", JOptionPane.YES_NO_OPTION);
+                int x = JOptionPane.showConfirmDialog(this, "'" + internalFrameName + "' is still not saved.\nDo you want to view a test preview?", "View a test preview?", JOptionPane.YES_NO_OPTION);
                 if (x == JOptionPane.YES_OPTION) {
                     try {
                         java.sql.Statement stmtDelete = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -1655,7 +1651,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         if (!ID.equals("")) {
             new WriteNotesCommon(this).setVisible(true);
         } else if (ID.equals("")) {
-            JOptionPane.showMessageDialog(this, "Please save the '"+internalFrameName+"'. After that you can write your notes.", "Save first", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(this, "Please save the '" + internalFrameName + "'. After that you can write your notes.", "Save first", JOptionPane.OK_OPTION);
         }
     }//GEN-LAST:event_buttonWriteNotesActionPerformed
 
@@ -1727,22 +1723,22 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
 
     }//GEN-LAST:event_TextPurchasePriceKeyPressed
 
-    private void TextQuantityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextQuantityFocusGained
-        TextQuantity.selectAll();
-    }//GEN-LAST:event_TextQuantityFocusGained
+    private void textEnteredQuantityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEnteredQuantityFocusGained
+        textEnteredQuantity.selectAll();
+    }//GEN-LAST:event_textEnteredQuantityFocusGained
 
-    private void TextQuantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextQuantityKeyPressed
+    private void textEnteredQuantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textEnteredQuantityKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             CheckAtQuantityFieldBeforeUpdate();
         }
-    }//GEN-LAST:event_TextQuantityKeyPressed
+    }//GEN-LAST:event_textEnteredQuantityKeyPressed
 
     private void CheckAtQuantityFieldBeforeUpdate() {
-        if (!TextPurchasePrice.getText().equals("") && !TextQuantity.getText().equals("") && !TextAmount.getText().equals("")) {
+        if (!TextPurchasePrice.getText().equals("") && !textEnteredQuantity.getText().equals("") && !TextAmount.getText().equals("")) {
             float Amount, AvailableQuantity;
             int SelectedRow = tableMRN.getSelectedRow();
             float PurchasePrice = Float.parseFloat(TextPurchasePrice.getText());
-            float TransferQuantity = Float.parseFloat(TextQuantity.getText());
+            float TransferQuantity = Float.parseFloat(textEnteredQuantity.getText());
 
             if (TransferQuantity > 0) {
                 try {
@@ -1759,7 +1755,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                             buttonUpdate.requestFocus();
                         } else if (AvailableQuantity < TransferQuantity) {
                             JOptionPane.showMessageDialog(this, "Issue quantity should be less than the available quantity.", "Not enough.", JOptionPane.OK_OPTION);
-                            TextQuantity.requestFocus();
+                            textEnteredQuantity.requestFocus();
                         }
                     }
                     stmtGRNItems.close();
@@ -1775,7 +1771,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                 JOptionPane.showMessageDialog(this, "Quantity should be greater than zero.", "Zero quantity", JOptionPane.OK_OPTION);
             }
 
-        } else if (TextPurchasePrice.getText().equals("") || TextQuantity.getText().equals("") || TextAmount.getText().equals("")) {
+        } else if (TextPurchasePrice.getText().equals("") || textEnteredQuantity.getText().equals("") || TextAmount.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Some fields are empty.", "Empty fields", JOptionPane.OK_OPTION);
         }
     }
@@ -1785,35 +1781,33 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
     }//GEN-LAST:event_TextAmountKeyPressed
 
     private void tableMRNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMRNMouseClicked
-//        float AvailableQuantity;
-//        int SelectedRow = tableMRN.getSelectedRow();
-//        try {
-//            String ItemCode = tableMRN.getValueAt(SelectedRow, 0).toString();
-//            ResultSet RSETAvaItems;
-//            java.sql.Statement stmtItems = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-//            String ItemQuery = "SELECT Quantity FROM Items WHERE ItemCode='" + ItemCode + "'";
-//            RSETAvaItems = stmtItems.executeQuery(ItemQuery);
-//            if (RSETAvaItems.next()) {
-//                AvailableQuantity = RSETAvaItems.getFloat("Quantity");
-//                textAvailableQuantity.setText("" + roundThreeDecimals((AvailableQuantity)));
-//            }
-//            stmtItems.close();
-//            RSETAvaItems.close();
-//        } catch (Exception ex) {
-//            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-//            JOptionPane.showMessageDialog(this, "Please contact for support.");
-//        }
-        
         int SelectedRowCount = tableMRN.getSelectedRowCount();
-        tableMRN.setSelectionMode(0);
+        tableIssue.setSelectionMode(0);
         if (SelectedRowCount == 1) {
-            TextQuantity.requestFocus();
-            String PurchasePrice = tableMRN.getValueAt(tableMRN.getSelectedRow(), 3).toString();
-            String Quantity = tableMRN.getValueAt(tableMRN.getSelectedRow(), 4).toString();
-            TextPurchasePrice.setText(PurchasePrice);
-            TextQuantity.setText(Quantity);
+            float AvailableQuantity;
+            int SelectedRow = tableMRN.getSelectedRow();
+            try {
+                String ItemCode = tableMRN.getValueAt(SelectedRow, 0).toString();
+                ResultSet RSETAvaItems;
+                java.sql.Statement stmtItems = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                String ItemQuery = "SELECT Quantity FROM Items WHERE ItemCode='" + ItemCode + "'";
+                RSETAvaItems = stmtItems.executeQuery(ItemQuery);
+                if (RSETAvaItems.next()) {
+                    AvailableQuantity = RSETAvaItems.getFloat("Quantity");
+                    textAvailableQuantity.setText("" + roundThreeDecimals((AvailableQuantity)));
+                    textEnteredQuantity.requestFocus();
+                    String PurchasePrice = tableMRN.getValueAt(tableMRN.getSelectedRow(), 3).toString();
+                    String Quantity = tableMRN.getValueAt(tableMRN.getSelectedRow(), 4).toString();
+                    TextPurchasePrice.setText(PurchasePrice);
+                    textEnteredQuantity.setText(Quantity);
+                }
+                stmtItems.close();
+                RSETAvaItems.close();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please contact for support.");
+            }
         }
-
     }//GEN-LAST:event_tableMRNMouseClicked
 
     private void PreviewMRN() {
@@ -1944,7 +1938,6 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
     private javax.swing.JFormattedTextField TextAmount;
     private javax.swing.JTextField TextDate;
     private javax.swing.JFormattedTextField TextPurchasePrice;
-    private javax.swing.JFormattedTextField TextQuantity;
     private javax.swing.JLabel backgroundCornerLabel;
     private javax.swing.JLabel backgroundLabel;
     private javax.swing.JButton btnCalculate;
@@ -1975,6 +1968,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
     private javax.swing.JTable tableMRN;
     private javax.swing.JTable tableSearch;
     private javax.swing.JFormattedTextField textAvailableQuantity;
+    private javax.swing.JFormattedTextField textEnteredQuantity;
     private javax.swing.JTextField textIssueBy;
     public static javax.swing.JTextField textMRNNumber;
     private javax.swing.JTextField textNumberTransactions;

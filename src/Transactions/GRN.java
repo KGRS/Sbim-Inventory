@@ -168,7 +168,7 @@ public class GRN extends javax.swing.JInternalFrame {
 
         setIconifiable(true);
         setTitle("GRN (Item code wise)");
-        setPreferredSize(new java.awt.Dimension(1097, 688));
+        setPreferredSize(new java.awt.Dimension(1097, 674));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -799,7 +799,7 @@ public class GRN extends javax.swing.JInternalFrame {
         panel1.add(labelIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 280));
 
         backgroundCornerLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 470, 230));
+        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 460, 120));
 
         backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         panel1.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, 1070, 460));
@@ -812,7 +812,7 @@ public class GRN extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

@@ -127,7 +127,7 @@ public class IssueWithoutMaterialRequisitionItemCodeWise extends javax.swing.JIn
 
         setIconifiable(true);
         setTitle("Issue without Material Requisition (Item code wise)");
-        setPreferredSize(new java.awt.Dimension(1097, 688));
+        setPreferredSize(new java.awt.Dimension(1097, 674));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -530,7 +530,7 @@ public class IssueWithoutMaterialRequisitionItemCodeWise extends javax.swing.JIn
         panel1.add(cmbTakeFromDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 320, -1));
 
         backgroundCornerLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 470, 230));
+        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 460, 90));
 
         backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         panel1.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, 1070, 460));
@@ -543,7 +543,7 @@ public class IssueWithoutMaterialRequisitionItemCodeWise extends javax.swing.JIn
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

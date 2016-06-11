@@ -158,11 +158,9 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 panel1MouseClicked(evt);
             }
         });
-        panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_category.setForeground(new java.awt.Color(102, 102, 102));
         lbl_category.setText("Unit code");
-        panel1.add(lbl_category, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 110, 20));
 
         txtCode.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -177,7 +175,6 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 txtCodeKeyReleased(evt);
             }
         });
-        panel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 170, 20));
 
         txtCategoryName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -192,7 +189,6 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 txtCategoryNameKeyReleased(evt);
             }
         });
-        panel1.add(txtCategoryName, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 210, 20));
 
         btnSave.setMnemonic('s');
         btnSave.setText("Save");
@@ -202,7 +198,6 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 btnSaveActionPerformed(evt);
             }
         });
-        panel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 80, -1));
 
         btnDelete.setMnemonic('d');
         btnDelete.setText("Delete");
@@ -211,15 +206,12 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        panel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 80, -1));
 
         lbl_description.setForeground(new java.awt.Color(102, 102, 102));
         lbl_description.setText("Unit name");
-        panel1.add(lbl_description, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 110, 20));
 
         lbl_subAccount.setForeground(new java.awt.Color(102, 102, 102));
         lbl_subAccount.setText("Search unites by");
-        panel1.add(lbl_subAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 140, 20));
 
         btnExit.setMnemonic('e');
         btnExit.setText("Exit");
@@ -233,7 +225,6 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 btnExitKeyPressed(evt);
             }
         });
-        panel1.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 350, 80, -1));
 
         rBtnCode.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(rBtnCode);
@@ -244,7 +235,6 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 rBtnCodeActionPerformed(evt);
             }
         });
-        panel1.add(rBtnCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 60, -1));
 
         rBtnName.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(rBtnName);
@@ -260,11 +250,9 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 rBtnNameKeyPressed(evt);
             }
         });
-        panel1.add(rBtnName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 60, -1));
 
         lbl_accountType.setForeground(new java.awt.Color(102, 102, 102));
         lbl_accountType.setText("Remarks");
-        panel1.add(lbl_accountType, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 110, 20));
 
         cmbTypes.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
@@ -280,7 +268,6 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 cmbTypesKeyPressed(evt);
             }
         });
-        panel1.add(cmbTypes, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 210, 20));
 
         TableCategory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -313,19 +300,14 @@ public class UserUnites extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TableCategory);
 
-        panel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 310));
-
         txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtSearchKeyReleased(evt);
             }
         });
-        panel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 170, -1));
-        panel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 350, -1));
 
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Base SI unit");
-        panel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 114, 20));
 
         cmbBaseSiUnit.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
@@ -341,11 +323,9 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 cmbBaseSiUnitKeyPressed(evt);
             }
         });
-        panel1.add(cmbBaseSiUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 210, 20));
 
         lbl_accountType1.setForeground(new java.awt.Color(102, 102, 102));
         lbl_accountType1.setText("Unit Type");
-        panel1.add(lbl_accountType1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 110, 20));
 
         FormattedTextPurchaseMeasurement.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         FormattedTextPurchaseMeasurement.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -360,11 +340,9 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 FormattedTextPurchaseMeasurementKeyPressed(evt);
             }
         });
-        panel1.add(FormattedTextPurchaseMeasurement, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 170, -1));
 
         lbl_accountType2.setForeground(new java.awt.Color(102, 102, 102));
         lbl_accountType2.setText("Issue Measurement");
-        panel1.add(lbl_accountType2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 110, 20));
 
         textRemarks.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -379,11 +357,9 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 textRemarksKeyReleased(evt);
             }
         });
-        panel1.add(textRemarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 210, -1));
 
         lbl_accountType3.setForeground(new java.awt.Color(102, 102, 102));
         lbl_accountType3.setText("Purchase Measurement");
-        panel1.add(lbl_accountType3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 120, 20));
 
         FormattedTextIssueMeasurement.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         FormattedTextIssueMeasurement.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -398,17 +374,116 @@ public class UserUnites extends javax.swing.JInternalFrame {
                 FormattedTextIssueMeasurementKeyPressed(evt);
             }
         });
-        panel1.add(FormattedTextIssueMeasurement, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 170, -1));
+
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_subAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(rBtnCode, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(rBtnName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(lbl_category, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_description, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbl_accountType1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbl_accountType3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbl_accountType2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbl_accountType, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCategoryName, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbBaseSiUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbTypes, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FormattedTextPurchaseMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FormattedTextIssueMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textRemarks, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSeparator1)))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(598, 598, 598)
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_subAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rBtnCode)
+                    .addComponent(rBtnName)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_category, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addComponent(lbl_description, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(lbl_accountType1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(lbl_accountType3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(lbl_accountType2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(lbl_accountType, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addComponent(txtCategoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(cmbBaseSiUnit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(cmbTypes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(FormattedTextPurchaseMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(FormattedTextIssueMeasurement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(textRemarks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSave)
+                    .addComponent(btnDelete)
+                    .addComponent(btnExit)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)
+            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

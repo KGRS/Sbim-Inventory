@@ -134,7 +134,7 @@ public class ReturnToSupplier extends javax.swing.JInternalFrame {
 
         setIconifiable(true);
         setTitle("Return To Supplier (Item code wise)");
-        setPreferredSize(new java.awt.Dimension(1103, 688));
+        setPreferredSize(new java.awt.Dimension(1109, 674));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -625,7 +625,9 @@ public class ReturnToSupplier extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

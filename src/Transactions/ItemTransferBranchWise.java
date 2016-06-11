@@ -134,7 +134,7 @@ public class ItemTransferBranchWise extends javax.swing.JInternalFrame {
 
         setIconifiable(true);
         setTitle("Item Transfer (Branch wise)");
-        setPreferredSize(new java.awt.Dimension(1097, 688));
+        setPreferredSize(new java.awt.Dimension(1103, 674));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -554,7 +554,7 @@ public class ItemTransferBranchWise extends javax.swing.JInternalFrame {
         panel1.add(labelIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 400, 240));
 
         backgroundCornerLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 590, 230));
+        panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 580, 130));
 
         backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         panel1.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, 1070, 460));
@@ -567,7 +567,9 @@ public class ItemTransferBranchWise extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
