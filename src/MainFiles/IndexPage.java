@@ -61,6 +61,7 @@ public class IndexPage extends javax.swing.JFrame {
 
     private final String projectPath = System.getProperty("user.dir");
     public static String user = "";
+    public static String employeeCode = "";
     public static String departmentCode = "";
     public static String subDepartmentCode = "";
     public static String departmentName = "";
@@ -132,7 +133,7 @@ public class IndexPage extends javax.swing.JFrame {
         ef.enableFeatuers();
 
         String LogedUser = IndexPage.user;
-        LabelUser.setText(LogedUser);
+        LabelUser.setText(LogedUser + spliter + employeeCode);
         
         String LogedUserDepartmentCode = IndexPage.departmentCode;
         String LogedUserDepartmentName = IndexPage.departmentName;
