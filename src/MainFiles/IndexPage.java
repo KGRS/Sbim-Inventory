@@ -22,7 +22,6 @@ import de.javasoft.plaf.synthetica.SyntheticaBlueMoonLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaClassyLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaOrangeMetallicLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaWhiteVisionLookAndFeel;
-import functions.EnableFeatuers;
 import functions.Informations;
 import functions.ReadConfig;
 import java.awt.Color;
@@ -67,7 +66,6 @@ public class IndexPage extends javax.swing.JFrame {
     public static String departmentName = "";
     public static String subDepartmentName = "";
     public static String time = "";
-    public static String taxCalLocation = "FO";
     public static URL url = null;
     public static Date SYSTEM_DATE;
     private final String spliter = "--";
@@ -128,9 +126,6 @@ public class IndexPage extends javax.swing.JFrame {
         LabelBackGroundPicture.setSize(screenSize);
         pnl_LeftPanel.revalidate();
         pnl_LeftPanel.repaint();
-
-        EnableFeatuers ef = new EnableFeatuers();
-        ef.enableFeatuers();
 
         String LogedUser = IndexPage.user;
         LabelUser.setText(LogedUser + spliter + employeeCode);
