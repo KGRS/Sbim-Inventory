@@ -944,6 +944,34 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                 String poItemsRecivedQtyUpdateQuery = "Update MRNItems set IsPending = '" + MRNItemStatue + "' where (MRNID = '" + MRNID + "' AND ItemCode='" + MRNItemCode + "')";
                 stmtPOItemsIsPendingUpdate.execute(poItemsRecivedQtyUpdateQuery);
             }
+            updateMRNMainAsCompleted();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please contact for support.");
+        }
+    }
+
+    private void updateMRNMainAsCompleted() {
+        String MRNItemStatue = "No", MRNID;
+        ResultSet RSETSelectMRN;
+        try {
+            MRNID = textMRNNumber.getText();
+            java.sql.Statement stmtSelectMRN = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            java.sql.Statement stmtPOItemsIsPendingUpdate = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String selectMRNQuery = "SELECT\n"
+                    + "     MRNmain.\"MRNID\" AS MRNmain_MRNID,\n"
+                    + "     MRNItems.\"IsPending\" AS MRNItems_IsPending,\n"
+                    + "     MRNmain.\"IsPending\" AS MRNmain_IsPending\n"
+                    + "FROM\n"
+                    + "     \"dbo\".\"MRNItems\" MRNItems INNER JOIN \"dbo\".\"MRNmain\" MRNmain ON MRNItems.\"MRNID\" = MRNmain.\"MRNID\"\n"
+                    + "WHERE\n"
+                    + "     (MRNItems.\"IsPending\" = 'Yes')";
+            RSETSelectMRN = stmtSelectMRN.executeQuery(selectMRNQuery);
+
+            while (RSETSelectMRN.next()) {
+                String poItemsRecivedQtyUpdateQuery = "Update MRNmain set IsPending = '" + MRNItemStatue + "' where (MRNID = '" + MRNID + "')";
+                stmtPOItemsIsPendingUpdate.execute(poItemsRecivedQtyUpdateQuery);
+            }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             JOptionPane.showMessageDialog(this, "Please contact for support.");
