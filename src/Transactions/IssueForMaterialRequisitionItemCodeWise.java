@@ -720,9 +720,9 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
         String ItemCode, ItemName, PurchaseUnitCode, ExpireDate, MRNID = "", UnitSell;
         double PurchasePrice, Quantity, Amount;
         double CurrentQuantity, NewQuantity, calculatedPoRecivedQuantity, recivedPoQuantity;
-        double PresentageShowSellPrice, SellPrice, AddedValueForCalSellPrice, OriginalSellPrice;
+        double SellPrice;
         int PriceLevel = 0;
-        ResultSet RSETCurrentItemQuantity, RSETPoRecivedItemQuantity;
+        ResultSet RSETCurrentItemQuantity, RSETPoRecivedItemQuantity, RSETCurrentQtyAtDepartments;
         try {
             String issueBy = textIssueBy.getText();
             String userId = IndexPage.user;
@@ -730,16 +730,10 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
             float TotalWithoutTaxes = Float.parseFloat(txtTotalNoTax.getText());
             float OtherChargers = Float.parseFloat(txtOtherChargers.getText());
 
-            float itemTax1 = 0;
-            float itemTax2 = 0;
-            float itemOtherChargers = 0;
-
             float TotalWithTaxes = Float.parseFloat(txtTotalWithTax.getText());
 
             String Remarks = "";
             String departmentCode[] = comboBoxFilter.getSelectedItem().toString().split("--");
-            int HasPaid = 0;
-            String IsReturn = "No";
             String ForEmptyFields = "-";
 
             String ID;
@@ -790,6 +784,7 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
             java.sql.Statement stmtItems = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             java.sql.Statement stmtStockUpdate = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             java.sql.Statement stmtCurrentQty = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            java.sql.Statement stmtCurrentQtyAtDepartments = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             java.sql.Statement stmtBinCardInsert = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             java.sql.Statement stmtPOItemsRecivedQtyUpdate = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             java.sql.Statement stmtPOItemsCheckRecivedQty = ConnectSql.conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -855,21 +850,29 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                         }
                     }
 
-                    String ItemsAtDepartmentsInsert = "INSERT INTO [ItemsAtDepartments]\n"
-                            + "           ([ItemCode]\n"
-                            + "           ,[DepartmentCode]\n"
-                            + "           ,[SellPrice]\n"
-                            + "           ,[Quantity]\n"
-                            + "           ,[UnitSell]\n"
-                            + "           ,[PriceLevel])\n"
-                            + "     VALUES\n"
-                            + "           ('" + ItemCode + "'\n"
-                            + "           ,'" + departmentCode[1] + "'\n"
-                            + "           ,'" + SellPrice + "'\n"
-                            + "           ,'" + Quantity + "'\n"
-                            + "           ,'" + UnitSell + "'\n"
-                            + "           ,'" + PriceLevel + "')";
-                    stmtItemsAtDepartmentsQty.execute(ItemsAtDepartmentsInsert);
+                    String CurrentQtyQueryAtDepartments = "SELECT Quantity FROM ItemsAtDepartments WHERE ItemCode='" + ItemCode + "' AND DepartmentCode = '" + departmentCode[1] + "'";
+                    RSETCurrentQtyAtDepartments = stmtCurrentQtyAtDepartments.executeQuery(CurrentQtyQueryAtDepartments);
+
+                    if (RSETCurrentQtyAtDepartments.next()) {
+                        String itemsAtDepartmentsUpdateQuery = "Update ItemsAtDepartments set Quantity = '" + NewQuantity + "' where ItemCode='" + ItemCode + "' AND DepartmentCode = '" + departmentCode[1] + "'";
+                        stmtItemsAtDepartmentsQty.execute(itemsAtDepartmentsUpdateQuery);
+                    } else {
+                        String ItemsAtDepartmentsInsert = "INSERT INTO [ItemsAtDepartments]\n"
+                                + "           ([ItemCode]\n"
+                                + "           ,[DepartmentCode]\n"
+                                + "           ,[SellPrice]\n"
+                                + "           ,[Quantity]\n"
+                                + "           ,[UnitSell]\n"
+                                + "           ,[PriceLevel])\n"
+                                + "     VALUES\n"
+                                + "           ('" + ItemCode + "'\n"
+                                + "           ,'" + departmentCode[1] + "'\n"
+                                + "           ,'" + SellPrice + "'\n"
+                                + "           ,'" + Quantity + "'\n"
+                                + "           ,'" + UnitSell + "'\n"
+                                + "           ,'" + PriceLevel + "')";
+                        stmtItemsAtDepartmentsQty.execute(ItemsAtDepartmentsInsert);
+                    }
 
                     String BinCardInsert = "INSERT INTO [BinCard]\n"
                             + "           ([ItemCode]\n"
@@ -898,9 +901,9 @@ public class IssueForMaterialRequisitionItemCodeWise extends javax.swing.JIntern
                     stmtBinCardInsert.execute(BinCardInsert);
                 }
             }
-
             stmtItems.close();
             stmtCurrentQty.close();
+            stmtCurrentQtyAtDepartments.close();
             stmtStockUpdate.close();
             stmtBinCardInsert.close();
             stmtPOItemsRecivedQtyUpdate.close();
