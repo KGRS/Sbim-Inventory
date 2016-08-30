@@ -1077,6 +1077,9 @@ private void enableV(){
     jSeparator4.setVisible(false);
     TabMenuSettings.setVisible(false);
     MenuCustomer.setVisible(false);
+    jMenuItem2.setVisible(false);
+    jMenuItem3.setVisible(false);
+    MenuStockEditDepartments.setVisible(false);
 }
 
 private void TabMenuMainFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TabMenuMainFilesActionPerformed
