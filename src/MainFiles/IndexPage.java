@@ -27,6 +27,7 @@ import functions.ReadConfig;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
@@ -1221,26 +1222,13 @@ private void MenuSubCategoryActionPerformed(java.awt.event.ActionEvent evt) {//G
     }//GEN-LAST:event_SubMenuGreenPlanetActionPerformed
 
     private void SubMenuWinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubMenuWinActionPerformed
-//        try {
-//            String lookandfeel = UIManager.getSystemLookAndFeelClassName();
-//            UIManager.setLookAndFeel(lookandfeel);
-//            SwingUtilities.updateComponentTreeUI(this);
-//            this.repaint();
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(IndexPage.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            Logger.getLogger(IndexPage.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            Logger.getLogger(IndexPage.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (UnsupportedLookAndFeelException ex) {
-//            Logger.getLogger(IndexPage.class.getName()).log(Level.SEVERE, null, ex); 
-//        }
-//        dskPane_RightPanel.removeAll();
         try {
-
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            ImageIcon imgThisImg = new ImageIcon(projectPath + "/pictures/DefaultBackgrounds/Basic/WindowsLook.jpg");
-            LabelBackGroundPicture.setIcon(imgThisImg);
+            int x = LabelBackGroundPicture.getWidth();
+            int y = LabelBackGroundPicture.getHeight();
+            String path = projectPath + "/pictures/DefaultBackgrounds/Basic/WindowsLook.jpg";
+            Image im = Toolkit.getDefaultToolkit().getImage(path);
+            LabelBackGroundPicture.setIcon(new ImageIcon(im.getScaledInstance(x, y, Image.SCALE_SMOOTH)));
             dskPane_RightPanel.setBackground(new Color(255, 255, 255));
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());

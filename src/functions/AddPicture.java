@@ -4,6 +4,7 @@
  */
 package functions;
 
+import MainFiles.Item;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
@@ -51,7 +52,7 @@ public class AddPicture {
 //            PathToImage ="pictures\\" + FolderName + "\\" + file.getName();
             PathToImage ="pictures\\" + FolderName + "\\" + Itemcode + ".jpg";
             Image img = Toolkit.getDefaultToolkit().getImage(PathToImage);
-            btn.setIcon(new ImageIcon(img));
+            btn.setIcon(new ImageIcon(img.getScaledInstance(Item.ButtonPicture.getWidth(), Item.ButtonPicture.getHeight(), Image.SCALE_SMOOTH)));
         }
         return PathToImage;
     }

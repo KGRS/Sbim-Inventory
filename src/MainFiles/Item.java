@@ -1306,7 +1306,7 @@ public class Item extends javax.swing.JInternalFrame {
 
                 } else if (PathToImage != null || !PathToImage.equals("")) {
                     Image img = Toolkit.getDefaultToolkit().getImage(PathToImage);
-                    ButtonPicture.setIcon(new ImageIcon(img));
+                    ButtonPicture.setIcon(new ImageIcon(img.getScaledInstance(ButtonPicture.getWidth(), ButtonPicture.getHeight(), Image.SCALE_SMOOTH)));
                 }
 //                ImageIcon imgThisImg = new ImageIcon(projectPath + "/barcode/" + ItemCode + ".tif");
 //                LabelBarCode.setIcon(imgThisImg);
@@ -2123,7 +2123,7 @@ public class Item extends javax.swing.JInternalFrame {
     private javax.swing.JButton ButtonExport;
     private javax.swing.JButton ButtonGoToLocation;
     private javax.swing.JButton ButtonGoToimageLocation;
-    private javax.swing.JButton ButtonPicture;
+    public static javax.swing.JButton ButtonPicture;
     private javax.swing.JButton ButtonPreviewBarCode;
     private javax.swing.JButton ButtonPreviewImage;
     private javax.swing.JComboBox ComboDepartment;
