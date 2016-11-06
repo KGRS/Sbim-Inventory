@@ -51,6 +51,12 @@ public class BinCard extends javax.swing.JInternalFrame {
         btnGrup_yesNo.add(rBtnCode);
         btnGrup_yesNo.add(rBtnName);
         rBtnCode.setSelected(true);
+        
+        RadioButtonInvoice.setVisible(false);
+        RadioButtonTransfer.setVisible(false);
+        RadioButtonDisposal.setVisible(false);
+        RadioButtonRefund.setVisible(false);
+        RadioButtonStockEdit.setVisible(false);
         model_ItemSearchTable = (DefaultTableModel) TableItemSearch.getModel();
         panel1.setToolTipText("Press right mouse click to refresh.");
         model_TableBinTable = (DefaultTableModel) TableBinCard.getModel();
@@ -334,7 +340,7 @@ public class BinCard extends javax.swing.JInternalFrame {
                 RadioButtonRefundActionPerformed(evt);
             }
         });
-        panel1.add(RadioButtonRefund, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 90, -1));
+        panel1.add(RadioButtonRefund, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 540, 90, -1));
 
         RadioButtonInvoice.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(RadioButtonInvoice);
@@ -382,7 +388,7 @@ public class BinCard extends javax.swing.JInternalFrame {
                 RadioButtonReturnActionPerformed(evt);
             }
         });
-        panel1.add(RadioButtonReturn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, -1, -1));
+        panel1.add(RadioButtonReturn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, -1, -1));
 
         RadioButtonGRN.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(RadioButtonGRN);

@@ -42,6 +42,7 @@ public class TransactionReportsPurchase extends javax.swing.JInternalFrame {
         cmbAutoID.setEnabled(false);
         cmbItem.setEnabled(false);
         cmbSupplier.setEnabled(false);
+        rBtnPurchaseOrder.setVisible(false);
         rBtnPurchaseOrderWithOutAmonut.setVisible(false);
         ReportTickDisable();
     }

@@ -1083,6 +1083,7 @@ private void enableV(){
     jMenuItem4.setVisible(false);
     arrowMenuTransfer.setVisible(false);
     MenuPurSellPriceEdit.setVisible(false);
+    MenuIssueReport.setVisible(false);
 }
 
 private void TabMenuMainFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TabMenuMainFilesActionPerformed
