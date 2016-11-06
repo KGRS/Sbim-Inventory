@@ -1081,6 +1081,11 @@ private void enableV(){
     jMenuItem2.setVisible(false);
     jMenuItem3.setVisible(false);
     MenuStockEditDepartments.setVisible(false);
+    menuTransactionsComparison.setVisible(false);
+    MenuGRNSerialCodeWise.setVisible(false);
+    jMenuItem4.setVisible(false);
+    arrowMenuTransfer.setVisible(false);
+    MenuPurSellPriceEdit.setVisible(false);
 }
 
 private void TabMenuMainFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TabMenuMainFilesActionPerformed

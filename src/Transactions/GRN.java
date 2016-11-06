@@ -75,6 +75,7 @@ public class GRN extends javax.swing.JInternalFrame {
         loadDepartmentsToCombo();
         listOrderByPOIDForAll();
         LoadTaxesToLables();
+        enableV();
         
         ImageIcon DefaultBackGround = new ImageIcon(projectPath + "/pictures/InternalFrameIcons/Transaction/GRN.png");
         labelIcon.setIcon(DefaultBackGround);
@@ -796,7 +797,7 @@ public class GRN extends javax.swing.JInternalFrame {
         panel1.add(buttonAddFreeItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 610, 110, -1));
 
         labelIcon.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        panel1.add(labelIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 280));
+        panel1.add(labelIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 250, 280));
 
         backgroundCornerLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         panel1.add(backgroundCornerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 460, 120));
@@ -817,7 +818,7 @@ public class GRN extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void LoadSystemDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -897,6 +898,18 @@ public class GRN extends javax.swing.JInternalFrame {
         }
     }
 
+    private void enableV(){
+        lbl_subAccount.setVisible(false);
+        comboBoxFilter.setVisible(false);
+        txtSearch.setVisible(false);
+        jScrollPane1.setVisible(false);
+        tableSearch.setVisible(false);
+        textNumberTransactions.setVisible(false);
+        textPONumber.setVisible(false);
+        buttonPreviewPO.setVisible(false);
+        buttonAddToTable.setVisible(false);
+    }
+    
     private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
         CheckBeforeSave();
     }//GEN-LAST:event_buttonSaveActionPerformed
