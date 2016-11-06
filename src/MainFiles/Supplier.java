@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * Supplier.java
- *
- * Created on Apr 6, 2016, 2:45:44 PM
- */
+
 package MainFiles;
 
 import static MainFiles.IndexPage.sup;
@@ -22,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ravindu
- */
+
 public class Supplier extends javax.swing.JInternalFrame {
 
     private final String select = "--Select--";

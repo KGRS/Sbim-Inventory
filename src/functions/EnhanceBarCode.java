@@ -13,15 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-/**
- * This class will be used to add simple text above in the given barcode. But
- * file extension should be a "png"
- *
- * @author Yasitha Gooentillek
- * @since 2015-02-11
- * @version 1.0.0.1
- *
- */
+
 public class EnhanceBarCode {
 
     /**

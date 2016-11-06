@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * MainCategory.java
- *
- * Created on Apr 5, 2013, 2:45:44 PM
- */
+
 package reports;
 
 import MainFiles.*;
@@ -34,10 +30,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-/**
- *
- * @author Ravindu
- */
+
 public class BinCard extends javax.swing.JInternalFrame {
 
     /**

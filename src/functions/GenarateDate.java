@@ -13,10 +13,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Ruwan
- */
+
 public class GenarateDate {
     public String date  =   "2011-01-01";
 

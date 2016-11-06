@@ -10,10 +10,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import pool.ConnectionFactory;
 
-/**
- *
- * @author Ravindu
- */
+
 
 public class ConnectSql {
 

@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * ConfigForm.java
- *
- * Created on Sep 8, 2010, 10:08:13 AM
- */
+
 package Settings;
 
 
@@ -21,10 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-/**
- *
- * @author Ravindu
- */
+
 
 public class ConfigForm extends javax.swing.JFrame {
 

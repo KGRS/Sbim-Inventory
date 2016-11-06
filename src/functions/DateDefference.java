@@ -10,11 +10,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * This class is used for the purpose of to get Date defference
- *
- * @author Yasitha Charman
- */
+
 public class DateDefference {
 
     private Date today;

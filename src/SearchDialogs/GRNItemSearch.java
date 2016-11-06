@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * GRNItemSearch.java
- *
- * Created on Mar 15, 2013, 8:07:57 AM
- */
+
 package SearchDialogs;
 
 import Transactions.GRN;
@@ -22,10 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ravindu
- */
 public class GRNItemSearch extends javax.swing.JDialog {
 
     private final GRN object_GRN;

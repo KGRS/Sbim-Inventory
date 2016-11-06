@@ -21,10 +21,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Ruwan
- */
+
 public class ResizeImage {
 
     public static BufferedImage resize() {

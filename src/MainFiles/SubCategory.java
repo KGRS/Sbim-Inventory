@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * SubCategory.java
- *
- * Created on Apr 5, 2016, 3:51:44 PM
- */
+
 package MainFiles;
 
 import static MainFiles.IndexPage.SubCat;
@@ -22,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ravindu
- */
+
 public class SubCategory extends javax.swing.JInternalFrame {
 
     private final DefaultTableModel model_SubCategoryTable;

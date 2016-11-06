@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * GRNItemSearch.java
- *
- * Created on Mar 15, 2013, 8:07:57 AM
- */
+
 package OtherDialogs;
 
 import MainFiles.IndexPage;
@@ -26,10 +22,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ravindu
- */
+
 public class AddFreeItems extends javax.swing.JDialog {
 
     private GRN object_GRN;

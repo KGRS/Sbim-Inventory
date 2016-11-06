@@ -18,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Bandula
- */
+
 public class AdministratorSettings extends javax.swing.JInternalFrame {
 
     /**

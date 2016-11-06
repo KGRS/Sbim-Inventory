@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * MainCategory.java
- *
- * Created on Apr 5, 2013, 2:45:44 PM
- */
+
 package reports;
 
 import static MainFiles.IndexPage.transactionsComparison;
@@ -22,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ravindu
- */
+
 public class TransactionsComparison extends javax.swing.JInternalFrame {
 
     /**

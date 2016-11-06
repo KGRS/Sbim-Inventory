@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * ChequeInfor.java
- *
- * Created on Nov 1, 2013, 1:57:36 PM
- */
+
 
 package SearchDialogs;
 
@@ -15,10 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Rajitha
- */
+
 public class ChequeInfor extends javax.swing.JDialog {
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

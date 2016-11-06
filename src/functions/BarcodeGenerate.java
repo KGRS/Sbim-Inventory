@@ -13,10 +13,7 @@ import java.awt.*;
 import java.io.*;
 //import reconciliation.Information;
 
-/**
- *
- * @author Ravindu
- */
+
 
 public class BarcodeGenerate {
 

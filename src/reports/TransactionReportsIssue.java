@@ -25,10 +25,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-/**
- *
- * @author ravindu
- */
+
 public class TransactionReportsIssue extends javax.swing.JInternalFrame {
 
     private final String select = "--Select--";

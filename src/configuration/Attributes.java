@@ -4,10 +4,7 @@
  */
 package configuration;
 
-/**
- *
- * @author TiVA
- */
+
 public interface Attributes {
 
     public static final int Shown_In_ProfitAndLost = 1;

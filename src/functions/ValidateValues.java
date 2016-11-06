@@ -3,14 +3,7 @@ package functions;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Charman
- */
+
 public class ValidateValues {
 
     private static boolean checkInt(String s) {

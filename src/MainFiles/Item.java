@@ -43,10 +43,7 @@ import net.sf.jasperreports.view.JasperViewer;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
-/**
- *
- * @author Ravindu
- */
+
 public class Item extends javax.swing.JInternalFrame {
 
     private final String select = "--Select--";

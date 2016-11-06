@@ -3,20 +3,13 @@
  * and open the template in the editor.
  */
 
-/*
- * CreateCompany.java
- *
- * Created on Mar 14, 2013, 1:53:23 PM
- */
+
 package SearchDialogs;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-/**
- *
- * @author TiVA
- */
+
 public class CreateCompany extends javax.swing.JDialog {
 
     private DateFormat format = new SimpleDateFormat("yyyy-MM-dd");

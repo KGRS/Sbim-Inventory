@@ -53,10 +53,7 @@ import reports.TransactionReportsIssue;
 import reports.TransactionReportsPurchase;
 import reports.TransactionsComparison;
 
-/**
- *
- * @author Ravindu
- */
+
 public class IndexPage extends javax.swing.JFrame {
 
     private final String projectPath = System.getProperty("user.dir");

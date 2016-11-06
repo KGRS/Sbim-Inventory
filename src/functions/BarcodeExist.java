@@ -4,10 +4,7 @@
  */
 package functions;
 
-/**
- *
- * @author Ravindu
- */
+
 public class BarcodeExist extends Exception {
 
     /**

@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
- * MainCategory.java
- *
- * Created on Apr 5, 2016, 2:45:44 PM
- */
+
 package MainFiles;
 
 import static MainFiles.IndexPage.MainCat;
@@ -22,10 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ravindu
- */
+
 public class MainCategory extends javax.swing.JInternalFrame {
 
     /**
